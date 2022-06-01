@@ -3,11 +3,15 @@ defmodule Fcmex.Config do
     A configuration for FCM
   "
 
-  def new do
+  def new(key) do
     [
       {"Content-Type", "application/json"},
-      {"Authorization", "key=#{server_key()}"}
+      {"Authorization", "key=#{key || server_key()}"}
     ]
+  end
+
+  def new do
+    new(server_key())
   end
 
   def server_key do

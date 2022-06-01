@@ -30,6 +30,14 @@ defmodule FcmexTest do
     }
   end
 
+   test "using dynamic server key", context do
+    use_cassette "single_token" do
+      assert {:ok, body} = Fcmex.push(context.token, data: %{foo: "bar"}, server_key: "12345")
+      assert body["success"] == 1
+      assert body["failure"] == 0
+    end
+  end
+
   test "request with single token", context do
     use_cassette "single_token" do
       assert {:ok, body} = Fcmex.push(context.token, data: %{foo: "bar"})
