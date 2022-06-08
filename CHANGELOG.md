@@ -1,5 +1,7 @@
-#  (2021-01-03)
+# [0.5.1] (2022-06-01)
 
+### Features
+* 🎸 optional `server key` as a parameter when sending a push
 
 
 # [0.5.0](https://github.com/shufo/fcmex/compare/0.4.1...0.5.0) (2021-01-03)
